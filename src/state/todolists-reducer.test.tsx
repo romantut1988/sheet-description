@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     addTodolistAC,
     changeTodolistFilterAC,
@@ -75,11 +75,11 @@ test('correct filter of todolist should be changed', () => {
     ]
 
     const action = changeTodolistFilterAC(todolistId2, newFilter);
-
     const endState = todolistsReducer(startState, action);
 
     expect(endState[0].filter).toBe("all");
     expect(endState[1].filter).toBe(newFilter);
 });
+
 
 
